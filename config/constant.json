@@ -1,0 +1,7 @@
+{
+    "DB_HOST": "45.32.63.28",
+    "DB_USER": "buzz",
+    "DB_PASS": "buzzdaika",
+    "DB_PORT": "5000",
+    "DB_DATABASE": "crud"
+}

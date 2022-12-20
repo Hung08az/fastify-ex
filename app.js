@@ -1,8 +1,22 @@
 'use strict'
 
 const path = require('path')
+const fastify = require('fastify')();
 const AutoLoad = require('@fastify/autoload')
-
+const cors = require("@fastify/cors");
+const { connect } = require('./config/db')
+connect();
+fastify.register(cors, {
+  origin: "*",
+  allowedHeaders: [
+    "Origin",
+    "X-Requested-With",
+    "Accept",
+    "Content-Type",
+    "Authorization",
+  ],
+  methods: ["GET", "PUT", "PATCH", "POST", "DELETE"],
+});
 // Pass --options via CLI arguments in command to enable these options.
 module.exports.options = {}
 
